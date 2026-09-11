@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<meta name="theme-color" content="#111817">
+
+<meta name="description" content="A low-cost, bidirectional occupancy tracker built around a real problem: finding a seat during finals.">
+<title>Study Space Occupancy Detector | Jensen Feng</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+<link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+<a class="identity" href="/">JF<span>Jensen Feng</span></a>
+<nav aria-label="Main navigation">
+<a href="/#projects">Projects</a><a href="/#about">About</a><a href="https://github.com/jfeng06" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+</nav>
+
+</header>
+
+<main id="main" class="detail">
+<a class="back" href="/#projects">← All projects</a>
+<section class="detail-hero">
+
+<p class="eyebrow">
+02 / EMBEDDED SYSTEMS
+</p>
+
+<h1>
+Study Space Occupancy Detector
+</h1>
+
+<p class="intro">
+A low-cost, bidirectional occupancy tracker built around a real problem: finding a seat during finals.
+</p>
+
+<div class="detail-actions">
+<span class="status">Team prototype</span><a class="button" href="/docs/studytrack.pdf" target="_blank" rel="noopener noreferrer">Read project report ↗</a><a class="text-link" href="/docs/studytrack.pdf" download>Download PDF ↓</a><a class="text-link" href="https://github.com/jfeng06/StudySpaceOccupancyDetector" target="_blank" rel="noopener noreferrer">View source on GitHub ↗</a>
+</div>
+
+</section>
+
+<div class="detail-layout">
+
+<div class="project-story">
+
+<section>
+
+<h2>
+The challenge
+</h2>
+
+<p>
+Students can spend valuable study time searching for open seats during finals week. Our team designed StudyTrack to estimate room occupancy automatically, with low cost and no check-in step for people passing through a doorway.
+</p>
+
+</section>
+
+<section>
+
+<h2>
+What we built
+</h2>
+
+<p>
+Two ultrasonic sensors feed distance readings to a micro:bit. The order of detection indicates entry or exit, allowing the system to update the occupancy count. A second micro:bit receives information over radio and acts as the prototype display.
+</p>
+
+</section>
+
+<section>
+
+<h2>
+My contribution
+</h2>
+
+<p>
+I worked with David Tran and Jack Farley on the occupancy-detector prototype. I authored the report’s results and discussion, conclusions, and recommendations, analyzing prototype performance, counting limitations, and potential improvements.
+</p>
+
+</section>
+
+<section>
+
+<h2>
+Results and limitations
+</h2>
+
+<p>
+The team report records a unit cost within the $15 target and successful controlled entry/exit trials. These trials do not establish real-world accuracy. Closely spaced people, groups, unusual walking speeds, and non-human objects can produce miscounts because the logic includes a pause between detections.
+</p>
+
+</section>
+
+<section>
+
+<h2>
+Next iteration
+</h2>
+
+<p>
+Evaluate alternatives to the fixed detection pause, test the system in a busy doorway, and explore thermal sensing to distinguish people from objects. A student-facing app or website and support for multiple entrances remain future work.
+</p>
+
+</section>
+
+</div>
+
+<aside class="project-evidence">
+
+<div class="evidence-visual">
+
+<div class="system-diagram" role="img" aria-label="Sensor A and sensor B feed micro:bit direction logic, which updates the room count">
+
+<div class="sensors">
+<span>Sensor A</span><span>Sensor B</span>
+</div>
+
+<div class="diagram-line">
+
+</div>
+<strong>micro:bit</strong><span class="diagram-note">Entry / exit logic</span>
+<div class="diagram-line">
+
+</div>
+<strong>Room count</strong>
+</div>
+
+</div>
+
+<p class="caption">
+System overview · Prototype architecture
+</p>
+
+<div class="metric">
+<strong>2</strong><span>sensors to detect direction</span>
+</div>
+
+<div class="tags">
+<span>micro:bit</span><span>Ultrasonic sensing</span><span>Prototyping</span>
+</div>
+
+</aside>
+
+</div>
+<a class="back bottom-back" href="/#projects">← Back to selected projects</a>
+</main>
+
+<footer>
+<a class="identity" href="/">JF<span>Jensen Feng</span></a><span>Electrical engineering · Built through experimentation.</span><a href="https://github.com/jfeng06" target="_blank" rel="noopener noreferrer">Explore my GitHub ↗</a>
+</footer>
+
+</body>
+
+</html>
