@@ -9,7 +9,7 @@
 
 <meta name="theme-color" content="#111817">
 
-<meta name="description" content="Jensen Feng’s electrical engineering projects: analog circuits, embedded occupancy sensing, audio signal processing, and RISC-V processor design.">
+<meta name="description" content="Jensen Feng’s electrical engineering projects: analog circuits, embedded occupancy sensing, audio signal processing, RISC-V processor design, and distributed AI infrastructure.">
 <title>Engineering Portfolio | Jensen Feng</title>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 
@@ -42,7 +42,7 @@ From circuit theory<br>to <em>working hardware.</em>
 </h1>
 
 <p class="intro">
-I’m an electrical engineering student at Purdue University, exploring analog circuits, embedded systems, and digital design through hands-on projects.
+I’m an electrical engineering student at Purdue University, exploring analog circuits, embedded systems, digital design, and distributed AI infrastructure through hands-on projects.
 </p>
 <a class="button" href="#projects">Explore my work <span>↓</span></a>
 </div>
@@ -62,7 +62,7 @@ Build.<br>Measure.<br>Understand.
 <div class="section-heading">
 
 <h2>
-Selected projects<span> / 01–04</span>
+Selected projects<span> / 01–05</span>
 </h2>
 
 <p>
@@ -74,11 +74,11 @@ Design decisions. Bench results. Work in progress.
 <div class="project-grid">
 
 <article class="project-card">
-<a class="project-visual" href="/projects/traffic-signaling/" aria-label="Read Traffic Signaling System"><span class="visual-label">01 / ANALOG CIRCUITS</span><img src="/assets/traffic-scope.png" alt="Traffic Signaling System: original oscilloscope measurement from the project report" width="800" height="512" loading="lazy"></a>
+<a class="project-visual" href="/traffic-signaling/" aria-label="Read Traffic Signaling System"><span class="visual-label">01 / ANALOG CIRCUITS</span><img src="/assets/traffic-scope.png" alt="Traffic Signaling System: original oscilloscope measurement from the project report" width="800" height="512" loading="lazy"></a>
 <div class="card-content">
 <span class="status ">Built & tested</span>
 <h3>
-<a href="/projects/traffic-signaling/">Traffic Signaling System <span>↗</span></a>
+<a href="/traffic-signaling/">Traffic Signaling System <span>↗</span></a>
 </h3>
 
 <p>
@@ -94,7 +94,7 @@ Sequencing green, yellow, and red with two 555 timers—and checking the timing 
 </article>
 
 <article class="project-card">
-<a class="project-visual" href="/projects/studytrack/" aria-label="Read Study Space Occupancy Detector"><span class="visual-label">02 / EMBEDDED SYSTEMS</span>
+<a class="project-visual" href="/studytrack/" aria-label="Read Study Space Occupancy Detector"><span class="visual-label">02 / EMBEDDED SYSTEMS</span>
 <div class="system-diagram" role="img" aria-label="Sensor A and sensor B feed micro:bit direction logic, which updates the room count">
 
 <div class="sensors">
@@ -114,7 +114,7 @@ Sequencing green, yellow, and red with two 555 timers—and checking the timing 
 <div class="card-content">
 <span class="status ">Team prototype</span>
 <h3>
-<a href="/projects/studytrack/">Study Space Occupancy Detector <span>↗</span></a>
+<a href="/studytrack/">Study Space Occupancy Detector <span>↗</span></a>
 </h3>
 
 <p>
@@ -130,11 +130,11 @@ A low-cost, bidirectional occupancy tracker built around a real problem: finding
 </article>
 
 <article class="project-card">
-<a class="project-visual" href="/projects/audio-equalizer/" aria-label="Read Three-Band Audio Equalizer"><span class="visual-label">03 / SIGNAL PROCESSING</span><img src="/assets/equalizer-scope.png" alt="Three-Band Audio Equalizer: original oscilloscope measurement from the project report" width="800" height="512" loading="lazy"></a>
+<a class="project-visual" href="/audio-equalizer/" aria-label="Read Three-Band Audio Equalizer"><span class="visual-label">03 / SIGNAL PROCESSING</span><img src="/assets/equalizer-scope.png" alt="Three-Band Audio Equalizer: original oscilloscope measurement from the project report" width="800" height="512" loading="lazy"></a>
 <div class="card-content">
 <span class="status ">Core stages validated</span>
 <h3>
-<a href="/projects/audio-equalizer/">Three-Band Audio Equalizer <span>↗</span></a>
+<a href="/audio-equalizer/">Three-Band Audio Equalizer <span>↗</span></a>
 </h3>
 
 <p>
@@ -150,7 +150,7 @@ Splitting, shaping, and recombining audio with three filter bands and independen
 </article>
 
 <article class="project-card">
-<a class="project-visual" href="/projects/risc-v/" aria-label="Read Single-Cycle RISC-V Processor"><span class="visual-label">04 / DIGITAL DESIGN</span>
+<a class="project-visual" href="/risc-v/" aria-label="Read Single-Cycle RISC-V Processor"><span class="visual-label">04 / DIGITAL DESIGN</span>
 <div class="processor-diagram" role="img" aria-label="Processor modules implemented so far: decode, register file, ALU, and writeback. Integration is in progress.">
 <span>DECODE</span><span>REGISTER FILE</span><span class="alu">ALU</span><span>WRITEBACK</span><small>COMPONENTS IN DEVELOPMENT</small>
 </div>
@@ -158,7 +158,7 @@ Splitting, shaping, and recombining audio with three filter bands and independen
 <div class="card-content">
 <span class="status wip">In progress</span>
 <h3>
-<a href="/projects/risc-v/">Single-Cycle RISC-V Processor <span>↗</span></a>
+<a href="/risc-v/">Single-Cycle RISC-V Processor <span>↗</span></a>
 </h3>
 
 <p>
@@ -171,6 +171,23 @@ Building the core blocks of a processor, from the register file and ALU to decod
 
 </div>
 
+</article>
+
+<article class="project-card">
+<a class="project-visual" href="/serverless-hybrid-ai-cluster/" aria-label="Read Serverless Hybrid AI Cluster">
+<span class="visual-label">05 / AI INFRASTRUCTURE</span>
+<div class="processor-diagram" role="img" aria-label="12-node cluster: eight DGX Sparks for CUDA inference and four Mac Studios for orchestration and sharded models">
+<span>8 × DGX SPARK</span><span>4 × MAC STUDIO</span>
+<span class="alu">CUDA INFERENCE</span><span>AGENT ORCHESTRATION</span>
+<small>12 NODES · LOCAL COMPUTE</small>
+</div>
+</a>
+<div class="card-content">
+<span class="status">Team deployment</span>
+<h3><a href="/serverless-hybrid-ai-cluster/">Serverless Hybrid AI Cluster <span>↗</span></a></h3>
+<p>A 12-node NVIDIA and Apple cluster for local AI agents, model inference, and full-stack development, with an AI-directed routing plane.</p>
+<div class="tags"><span>Distributed inference</span><span>CUDA / MLX</span><span>MCP</span></div>
+</div>
 </article>
 
 </div>
@@ -190,7 +207,7 @@ Curious about how things work.<br>Driven to build them.
 </h2>
 
 <p>
-I’m Jensen, an electrical engineering student at Purdue. My work spans timer-based circuits, analog audio processing, sensor-driven prototypes, and processor building blocks.
+I’m Jensen, an electrical engineering student at Purdue. My work spans timer-based circuits, analog audio processing, sensor-driven prototypes, processor building blocks, and local AI compute infrastructure.
 </p>
 
 <p>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#111817">
+<meta name="description" content="Jensen Feng’s work on a 12-node NVIDIA DGX Spark and Apple Mac Studio cluster for local AI inference, agent orchestration, and serverless task routing.">
+<title>Serverless Hybrid AI Cluster | Jensen Feng</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/serverless-hybrid-ai-cluster/project.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+<a class="identity" href="/">JF<span>Jensen Feng</span></a>
+<nav aria-label="Main navigation"><a href="/#projects">Projects</a><a href="/#about">About</a><a href="https://github.com/jfeng06" target="_blank" rel="noopener noreferrer">GitHub ↗</a></nav>
+</header>
+<main id="main" class="detail cluster-project">
+<a class="back" href="/#projects">← Back to selected projects</a>
+<section class="detail-hero">
+<p class="eyebrow">05 / AI INFRASTRUCTURE</p>
+<h1>Serverless Hybrid<br><em>AI Cluster</em></h1>
+<p class="intro">Twelve nodes. Two compute platforms. A local system for model inference, autonomous coding agents, and full-stack development workloads.</p>
+<div class="detail-actions">
+<span class="status">Team deployment</span>
+</div>
+</section>
+<div class="detail-layout">
+<div class="project-story">
+<section>
+<h2>The goal</h2>
+<p>Build a local compute platform that can run AI agents, serve models, and execute development tasks without renting external inference compute. The cluster hosts Model Context Protocol (MCP) servers and background automation for mySpecSheet, keeping model execution and data manipulation on local infrastructure.</p>
+</section>
+<section>
+<h2>My contribution</h2>
+<p>I worked with the team to build and connect the 12-node cluster, configure its inference networks, and deploy a coding-agent harness across NVIDIA and Apple hardware. My work included the local routing control plane, specialized model deployments, MCP services, and containerized automation pipelines.</p>
+</section>
+<section>
+<h2>Two platforms, distinct roles</h2>
+<p>Eight NVIDIA DGX Sparks run CUDA inference through vLLM and Ray on Debian. Their 100GbE ConnectX-7 RoCE v2 fabric recorded a 12 µs average round-trip latency. Four Mac Studios handle agent orchestration, MCP servers, and Qdrant, while also running Kimi K2.7, a 1T-parameter mixture-of-experts model, sharded through Exo and JACCL. The Mac nodes provide 768 GB of pooled unified memory over a Thunderbolt fabric measured at 38.5 Gbps. CUDA and Metal workloads stay within their respective platforms.</p>
+</section>
+<section>
+<h2>A local serverless control plane</h2>
+<p>Here, “serverless” means callers submit work without managing the underlying services. A fine-tuned Nemotron 3 Ultra, a 550B mixture-of-experts model, classifies task envelopes and returns structured routing decisions. A scheduler dispatches those decisions to pre-warmed systemd services or Ray worker pools. Reported routing latency is 24 ms per route. The control plane also considers queue depth, model selection, and service health.</p>
+</section>
+<section>
+<h2>Specialized model serving</h2>
+<p>Gemma 4 31B-Instruct serves diagnostics and MCP tasks after QLoRA fine-tuning on 14,200 instruction pairs covering diagnostic schemas, engineering logs, and tool traces. Gemma 4 Diffusion uses a LoRA trained on 8,400 paired images, including ECU wiring diagrams, pinout schematics, and simulation wireframes. Its two-node pipeline separates denoising from image decoding. Kimi handles long-context code workloads on the Mac nodes, while the DGX Sparks handle GPU inference and verification workloads.</p>
+</section>
+<section>
+<h2>Agents and background automation</h2>
+<p>The coding harness uses NVIDIA NemoClaw and OpenShell with Docker sandboxes for code generation, testing, and test verification. Background scrapers and RSS readers ingest and vectorize news feeds, while LlamaIndex and Qdrant index repository files for retrieval. Local, containerized execution avoids external inference API charges for these workloads and reduces exposure of project data to external model services.</p>
+</section>
+<section>
+<h2>Team</h2>
+<p>The cluster report credits Aditya Maramreddy, Henish Patel, Keith Li, Nikita Lopatenko, and Jensen Feng. The routing-plane report credits Aditya Maramreddy, Harry Patel, Keith Li, Patrick Schlegel, Jensen Feng, and Nikita Lopatenko.</p>
+</section>
+</div>
+<aside class="project-evidence" aria-label="Cluster configuration and reported benchmarks">
+<div class="evidence-visual">
+<div class="processor-diagram" role="img" aria-label="Eight DGX Sparks serve CUDA inference; four Mac Studios handle agents and sharded models">
+<span>8 × DGX SPARK</span><span>4 × MAC STUDIO</span><span class="alu">CUDA INFERENCE</span><span>AGENTS + MLX</span><small>12 NODES · LOCAL COMPUTE</small>
+</div>
+</div>
+<p class="caption">Hardware roles · Hybrid cluster architecture</p>
+<div class="metric"><strong>768</strong><span>GB pooled UMA<br>across four Mac Studios</span></div>
+<div class="metric"><strong>24</strong><span>ms average<br>routing decision</span></div>
+<h2 class="benchmark-heading">Reported benchmarks</h2>
+<table>
+<caption>From the cluster benchmark report</caption>
+<thead><tr><th scope="col">Workload</th><th scope="col">Result</th></tr></thead>
+<tbody>
+<tr><th scope="row">PR run &amp; test verification</th><td>0.81 PRs/min<br><span>118 s average duration</span></td></tr>
+<tr><th scope="row">Codebase indexing</th><td>120 files/sec</td></tr>
+<tr><th scope="row">RSS ingestion &amp; vectorization</th><td>12 feeds/min</td></tr>
+<tr><th scope="row">DGX fabric</th><td>12 µs average RTT</td></tr>
+<tr><th scope="row">Mac Thunderbolt fabric</th><td>38.5 Gbps</td></tr>
+</tbody>
+</table>
+<p class="caption">Measurements are reported for the documented cluster workloads. Throughput and average task duration are separate measurements; these figures are not general performance guarantees.</p>
+<div class="tags"><span>CUDA</span><span>vLLM</span><span>Ray</span><span>MLX</span><span>Exo / JACCL</span><span>RoCE v2</span><span>systemd</span><span>Docker</span><span>MCP</span><span>Qdrant</span><span>LoRA / QLoRA</span></div>
+
+</aside>
+</div>
+<a class="back bottom-back" href="/#projects">← Back to selected projects</a>
+</main>
+<footer><a class="identity" href="/">JF<span>Jensen Feng</span></a><span>Electrical engineering · Built through experimentation.</span><a href="https://github.com/jfeng06" target="_blank" rel="noopener noreferrer">Explore my GitHub ↗</a></footer>
+</body>
+</html>
